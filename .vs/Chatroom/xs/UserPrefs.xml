@@ -1,0 +1,63 @@
+﻿<Properties StartupConfiguration="{38BA6281-438E-43B0-AFAC-21B549FFEFDA}|Chatroom">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Chatroom.Web/Views/Shared/_Layout.cshtml">
+    <Files>
+      <File FileName="Chatroom/Installers/MvcInstaller.cs" Line="7" Column="30" />
+      <File FileName="Chatroom/Controllers/User/UserController.cs" Line="1" Column="1" />
+      <File FileName="Chatroom/Controllers/WeatherForecast/WeatherForecastController.cs" Line="1" Column="1" />
+      <File FileName="Chatroom/Installers/DataInstallers.cs" Line="1" Column="1" />
+      <File FileName="Chatroom/Installers/IInstaller.cs" Line="1" Column="1" />
+      <File FileName="Chatroom/Installers/InstallerExtention.cs" Line="1" Column="1" />
+      <File FileName="Chatroom/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="Chatroom/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="Chatroom/Program.cs" Line="3" Column="1" />
+      <File FileName="Chatroom/Startup.cs" Line="11" Column="2" />
+      <File FileName="Chatroom.DataAccess/ApplicationDbContext.cs" Line="12" Column="2" />
+      <File FileName="Chatroom.Model/AEntity.cs" Line="1" Column="1" />
+      <File FileName="Chatroom.Test/Controller/WeatherForecast/WeatherForecastControllerFactory.cs" Line="1" Column="1" />
+      <File FileName="Chatroom.Test/Controller/WeatherForecast/WeatherForecastControllerTest.cs" Line="1" Column="1" />
+      <File FileName="Chatroom.Web/Views/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="Chatroom.Web/Views/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="Chatroom.Web/Views/Home/Index.cshtml" Line="42" Column="1" />
+      <File FileName="Chatroom.Web/Views/Home/Privacy.cshtml" Line="1" Column="1" />
+      <File FileName="Chatroom.Web/Views/Shared/_Layout.cshtml" Line="79" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Chatroom" expanded="True">
+            <Node name="Chatroom.API" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Installers" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+            <Node name="Chatroom.DataAccess" expanded="True" />
+            <Node name="Chatroom.Model" expanded="True" />
+            <Node name="Chatroom.Test" expanded="True">
+              <Node name="Controller" expanded="True">
+                <Node name="WeatherForecast" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Chatroom.Web" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" selected="True" />
+                </Node>
+              </Node>
+              <Node name="wwwroot" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Chatroom.API PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.Chatroom.Web PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

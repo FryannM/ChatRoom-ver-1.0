@@ -1,0 +1,160 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.form-container{
+  padding: 50px 10px 50px 10px;
+  background-color: #eceef1;
+  margin-top: 25px; 
+  width: 50%;
+}
+
+#logo{
+  margin-bottom: 30px;
+}
+
+.div-btn-consulta-cedula{
+  margin-top: 10px;
+
+}
+
+#titulo{
+  color: #1c4072;
+}
+
+#cedulatextbox{
+  text-align: center;
+}
+
+#validator{
+  color: red;
+  font-size: 13px;
+}
+
+.copyright {
+  text-align: center;
+  margin: 50px auto 30px 0;
+  padding: 10px;
+  color: #7a8ca5;
+  font-size: 13px;
+}
+
+.logo_presidencia {
+  width: 500px !important;
+}
+.logos {
+  width: 200px !important;
+  padding: 10px;
+  display: inline-block;
+}
+.image-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Social icons*/
+
+.social-icons-ql li{
+  list-style:none;
+  float:left;
+  width:40px;
+  height:40px;
+  line-height:45px;
+  background:#000;
+  text-align:center;
+  margin:10px 5px;
+}
+
+/*facebook*/
+.social-icons-ql li:nth-child(1){
+   background:#34558E;
+}
+
+/*Twitter*/
+.social-icons-ql li:nth-child(2) {
+background:#25B8E6;
+}
+
+/*Instagram*/
+.social-icons-ql li:nth-child(3) {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+/*Youtube*/
+.social-icons-ql li:nth-child(4) {
+background:#DC4A38;
+}
+
+.social-icons-ql li i{
+  color:#fff;
+  font-size:20px;
+}
