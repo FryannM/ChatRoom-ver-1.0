@@ -26,7 +26,7 @@
             <div class="input-group mb-3">
                 <input type="text" class="form-control" id="message" asp-for="Message" placeholder="Type here Fryann M..." />
                 <div class="input-group-append">
-                    <input id="submit-form" type="button" value="Crear" class="btn btn-primary" />
+                    <input id="submit-form" type="button" value="Send" class="btn btn-primary" />
                 </div>
             </div>
         </div>
@@ -35,7 +35,10 @@
 
 @section Scripts
 {
-    <script>function getFormData($form) {
+    <script>
+
+
+        function getFormData($form) {
             var unindexed_array = $form.serializeArray();
             var indexed_array = {};
             $.map(unindexed_array, function (n, i) {
@@ -49,11 +52,9 @@
             debugger;
             var $form = $('form');
             var model = getFormData($form);
-            console.log('this is the model');
-            console.log(model);
-            var url = "https://localhost:63103/api/User/2";
+            var url = `https://localhost:35568/api/ChatRoom/getMessage`;
             $.ajax({
-                type: "GET",
+                type: "POST",
                 url: url,
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(model),

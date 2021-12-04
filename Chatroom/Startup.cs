@@ -39,7 +39,7 @@ namespace Chatroom
             app.UseSwagger();
             app.UseRouting();
             app.UseAuthorization();
-            app.UseMiddleware<JWTMiddleware>();
+            //app.UseMiddleware<JWTMiddleware>();
             app.UseCors("AllOrigins");
             app.UseEndpoints(endpoints =>
             {

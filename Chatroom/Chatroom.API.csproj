@@ -7,6 +7,8 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Chatroom' " />
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +20,8 @@
 
   <ItemGroup>
     <None Remove="Controllers\ChatRoom\" />
+    <None Remove="RabbitMQ.Client" />
+    <None Remove="Newtonsoft.Json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\ChatRoom\" />

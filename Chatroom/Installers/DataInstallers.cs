@@ -1,13 +1,10 @@
-﻿using Chatroom.Service;
+﻿using Chatroom.DataAccess;
+using Chatroom.Service;
+using Chatroom.Service.ChatRoom;
 using Chatroom.Service.Helpers;
-using Chatroom.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Chatroom.API.Installers
 {
@@ -22,6 +19,7 @@ namespace Chatroom.API.Installers
             //DI
             services.AddTransient<IWeatherForecastService, WeatherForecastService>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IChatRoomServices, ChatRoomServices>();
 
             //JWT Setting
             services.Configure<AppSettings>(configuration.GetSection("AppSettings"));

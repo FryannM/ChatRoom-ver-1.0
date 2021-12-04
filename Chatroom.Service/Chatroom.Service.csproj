@@ -7,6 +7,9 @@
   <ItemGroup>
     <None Remove="appsettings.Development.json" />
     <None Remove="appsettings.json" />
+    <None Remove="Helpers\MessageConsumer\" />
+    <None Remove="RabbitMQ.Client" />
+    <None Remove="ChatRoom\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +28,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="2.2.0" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,4 +36,8 @@
     <ProjectReference Include="..\Chatroom.DataAccess\Chatroom.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Helpers\MessageConsumer\" />
+    <Folder Include="ChatRoom\" />
+  </ItemGroup>
 </Project>
