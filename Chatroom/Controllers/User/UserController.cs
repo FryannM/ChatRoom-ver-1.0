@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Chatroom.Model.Entities.JWT;
 using Chatroom.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -31,6 +32,7 @@ namespace Chatroom.API.Controllers.User
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public string Get(int id)
         {
             return "value";

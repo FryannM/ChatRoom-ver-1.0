@@ -36,4 +36,14 @@ Git
 *  NuGet Package Manager Console → Update-Database
 *  
 
+ ### Docker Pulling some stuff
+
+*  Setting up RabbitMQ on Docker 
+## RUN 
+* docker pull rabbitmq:3-management
+* docker run -d --hostname  my-rabbit --name fryann-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management 
+
+
+
+ 
 

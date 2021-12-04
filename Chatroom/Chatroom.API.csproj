@@ -16,4 +16,10 @@
   </ItemGroup>
 
 
+  <ItemGroup>
+    <None Remove="Controllers\ChatRoom\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\ChatRoom\" />
+  </ItemGroup>
 </Project>

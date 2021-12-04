@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.9" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -14,5 +15,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\img\" />
+    <Folder Include="Views\ChatRoom\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\User\" />
+    <None Remove="RabbitMQ.Client" />
   </ItemGroup>
 </Project>

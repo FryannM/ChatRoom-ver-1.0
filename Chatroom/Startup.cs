@@ -40,11 +40,20 @@ namespace Chatroom
             app.UseRouting();
             app.UseAuthorization();
             app.UseMiddleware<JWTMiddleware>();
+            app.UseCors("AllOrigins");
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+            });
+
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+
+
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Chatroom.API.Installers
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -32,8 +33,21 @@ namespace Chatroom.API.Installers
                     }
                 });
             });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyHeader()
+                                       .AllowAnyOrigin()
+                                      .AllowAnyMethod();
+                    });
+            });
+            services.AddRazorPages();
+
 
             services.AddControllers();
+            
         }
     }
 }
