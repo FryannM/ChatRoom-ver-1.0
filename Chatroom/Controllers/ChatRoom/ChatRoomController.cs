@@ -25,27 +25,14 @@ namespace Chatroom.API.Controllers.ChatRoom
             _chatRoomService = chatRoomServices;
         }
        
-        // POST api/values
+        
         [HttpPost("message")]
-        public void SendMessage([FromBody] string theMessage)
+        public async Task<IActionResult> SendMessage([FromBody] MessageDto theMessage)
         {
-
-            var connectionFactory = new ConnectionFactory
-            {
-                Uri = new Uri("amqp://guest:guest@localhost:5672")
-            };
-
-            using var connection = connectionFactory.CreateConnection();
-            using var channel = connection.CreateModel();
-            channel.QueueDeclare("first-queue",
-                durable: true,
-                exclusive: false,
-                autoDelete: false,
-                arguments: null);
-            var message = new { User = "Fryann", Message = "Here is our first Message get this from Postman", TimeStamp = DateTime.Now };
-            var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message));
-            channel.BasicPublish("", "first-queue", null, body);
-
+            
+            var aResult = _chatRoomService.SendMessage(theMessage);
+            await _chatRoomService.GetBotResponse(theMessage);
+            return Ok();
         }
 
         [HttpPost("getMessage")]
@@ -55,7 +42,9 @@ namespace Chatroom.API.Controllers.ChatRoom
 
             return Ok(aResult);
         }
-    
+
+        
+
 
         private string Received ()
         {
@@ -90,10 +79,6 @@ namespace Chatroom.API.Controllers.ChatRoom
                      
 
                 }
-                    // this consumer tag identifies the subscription
-                    // when it has to be cancelled
-                    // ensure we get a delivery
-
 
 
 

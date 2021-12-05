@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="Multiple Projects">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Chatroom.Service/ChatRoom/ChatRoomServices.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Chatroom/Controllers/ChatRoom/ChatRoomController.cs">
     <Files>
-      <File FileName="Chatroom/Controllers/ChatRoom/ChatRoomController.cs" Line="56" Column="52" />
-      <File FileName="Chatroom.Model/Util/MessageDto.cs" Line="19" Column="37" />
-      <File FileName="Chatroom.Service/ChatRoom/ChatRoomServices.cs" Line="32" Column="81" />
-      <File FileName="Chatroom.Service/ChatRoom/IChatRoomServices.cs" Line="6" Column="39" />
+      <File FileName="Chatroom/Controllers/ChatRoom/ChatRoomController.cs" Line="30" Column="61" />
+      <File FileName="Chatroom.Service/ChatRoom/ChatRoomServices.cs" Line="73" Column="45" />
+      <File FileName="Chatroom.Service/ChatRoom/IChatRoomServices.cs" Line="16" Column="44" />
+      <File FileName="Chatroom.Web/Views/ChatRoom/ChatRoom.cshtml" Line="65" Column="22" />
+      <File FileName="Chatroom.Model/Util/MessageDto.cs" Line="6" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +13,9 @@
           <Node name="Chatroom" expanded="True">
             <Node name="Chatroom.API" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="ChatRoom" expanded="True" />
+                <Node name="ChatRoom" expanded="True">
+                  <Node name="ChatRoomController.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Installers" expanded="True" />
             </Node>
@@ -20,9 +23,7 @@
               <Node name="Util" expanded="True" />
             </Node>
             <Node name="Chatroom.Service" expanded="True">
-              <Node name="ChatRoom" expanded="True">
-                <Node name="ChatRoomServices.cs" selected="True" />
-              </Node>
+              <Node name="ChatRoom" expanded="True" />
               <Node name="Helpers" expanded="True">
                 <Node name="MessageConsumer" expanded="True" />
               </Node>
@@ -42,7 +43,11 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="98" column="1" />
+      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom/Controllers/ChatRoom/ChatRoomController.cs" relfile="Chatroom/Controllers/ChatRoom/ChatRoomController.cs" line="31" column="1" />
+      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="53" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations>
     <MultiItemSolutionRunConfiguration Id="Multiple Projects" Name="Multiple Projects">
