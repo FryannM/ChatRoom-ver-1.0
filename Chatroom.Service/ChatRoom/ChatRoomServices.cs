@@ -19,7 +19,7 @@ namespace Chatroom.Service.ChatRoom
         public async Task<List<RabbitMQApiResponse>> GetAllMessage()
         {
             List<RabbitMQApiResponse> AResult = new List<RabbitMQApiResponse>();
-             
+
             using (var aHttpClient = new HttpClient())
             {
                 try
@@ -36,7 +36,7 @@ namespace Chatroom.Service.ChatRoom
 
                     string aStringContent = await aResponse.Content.ReadAsStringAsync();
                     AResult = JsonConvert.DeserializeObject<List<RabbitMQApiResponse>>(aStringContent);
-                    
+
                 }
                 catch (Exception eError)
                 {
@@ -66,15 +66,15 @@ namespace Chatroom.Service.ChatRoom
                 var aMessage = new { User = theMessage.User, Message = theMessage.Message, TimeStamp = DateTime.Now };
                 var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(aMessage));
                 aChannel.BasicPublish("", Util.MyFirstQueue, null, body);
-                 
+
             }
             catch (Exception aError)
             {
                 throw aError;
             }
 
-            return  aSuccess;
-           
+            return aSuccess;
+
         }
 
         #region Private  methods
@@ -93,12 +93,11 @@ namespace Chatroom.Service.ChatRoom
             {
                 try
                 {
-                    
-                    var aUrl =  new Uri($"{Util.StockUrl}{theStockCode}");
+                    var aUrl = new Uri($"{Util.StockUrlBase}{theStockCode}{Util.StockUrlEnd}");
                     aHttpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue(Util.Applicationjson));
-                    HttpResponseMessage aResponse = await aHttpClient.GetAsync(aUrl);
+                    var aResponse = await aHttpClient.GetAsync(aUrl);
                     string aStringContent = await aResponse.Content.ReadAsStringAsync();
-                    string aJson = CsvToJsonConverter(aStringContent);
+                    var aJson = CsvToJsonConverter(aStringContent);
                     aResponseList = JsonConvert.DeserializeObject<List<object>>(aJson);
                 }
                 catch (Exception eError)
@@ -109,8 +108,10 @@ namespace Chatroom.Service.ChatRoom
 
             string aCombindedString = string.Join("-", aResponseList);
             StockResponseApi aStockResponse = JsonConvert.DeserializeObject<StockResponseApi>(aCombindedString);
+            if (aStockResponse.Date == null) { return string.Empty; }
 
             var aResponseMessage = $"{theStockCode} quote is ,{aStockResponse.High}{Util.BotResponse}";
+
 
             return aResponseMessage;
         }
@@ -118,37 +119,36 @@ namespace Chatroom.Service.ChatRoom
         /// <summary>
         /// Get the Bot Response and delivere the message
         /// </summary>
-        /// <param name="theMeesage"></param>
+        /// <param name="theMeesage">Represent the Message</param>
         /// <returns></returns>
 
         public async Task<string> GetBotResponse(MessageDto theMessage)
         {
+            string aStockCodeResponse = string.Empty;
 
-            
-            string aStockResponse = string.Empty;
-            
             StringComparison comp = StringComparison.OrdinalIgnoreCase;
             theMessage.Message.Contains(Util.AppleIncCommand, comp);
 
             string[] separatingStrings = { "stock_code = ", "..." };
-            string[] aStockCodes = theMessage.Message.Split(separatingStrings, System.StringSplitOptions.RemoveEmptyEntries);
-            
+            string[] aStockCodes = theMessage.Message.Split(separatingStrings, StringSplitOptions.RemoveEmptyEntries);
+
             foreach (var aStockCode in aStockCodes)
             {
-                aStockResponse = aStockCode;
+                aStockCodeResponse = aStockCode;
             }
 
-            await GetStockResponse(aStockResponse);
+           string  aStockeMessageResponse = await GetStockResponse(aStockCodeResponse);
 
-            var aBotMessage = new MessageDto()  {
-                    User = Util.BotName,
-                    Message = aStockResponse,
-                    TimeStamp = DateTime.Now };
+            var aBotMessage = new MessageDto()
+            {
+                User = Util.BotName,
+                Message = aStockeMessageResponse,
+                TimeStamp = DateTime.Now
+            };
 
-                 SendMessage(aBotMessage);
-            
-                return aStockResponse;
-          
+            SendMessage(aBotMessage);
+
+            return aStockCodeResponse;
         }
 
         /// <summary>
@@ -159,28 +159,28 @@ namespace Chatroom.Service.ChatRoom
 
         private string CsvToJsonConverter(string theFile)
         {
-            string aJson = string.Empty;
-            
-            string[] aLines = theFile.Split(new string[] { "\n" }, System.StringSplitOptions.None);
+            string json = string.Empty;
 
-            if (aLines.Length > 1)
+            string[] lines = theFile.Split(new string[] { "\n" }, System.StringSplitOptions.None);
+
+            if (lines.Length > 1)
             {
-                // parse headers
-                string[] headers = aLines[0].Split(',');
+                // parsing the headers of the response
+                string[] headers = lines[0].Split(',');
 
                 StringBuilder sbjson = new StringBuilder();
                 sbjson.Clear();
                 sbjson.Append("[");
 
-                // parse data
-                for (int i = 1; i < aLines.Length; i++)
+                // parsing data
+                for (int i = 1; i < lines.Length; i++)
                 {
-                    if (string.IsNullOrWhiteSpace(aLines[i])) continue;
-                    if (string.IsNullOrEmpty(aLines[i])) continue;
+                    if (string.IsNullOrWhiteSpace(lines[i])) continue;
+                    if (string.IsNullOrEmpty(lines[i])) continue;
 
                     sbjson.Append("{");
 
-                    string[] data = aLines[i].Split(',');
+                    string[] data = lines[i].Split(',');
 
                     for (int h = 0; h < headers.Length; h++)
                     {
@@ -189,18 +189,18 @@ namespace Chatroom.Service.ChatRoom
                         );
                     }
 
-                    sbjson.Append("}" + (i < aLines.Length - 1 ? "," : null));
+                    sbjson.Append("}" + (i < lines.Length - 1 ? "," : null));
                 }
 
                 sbjson.Append("]");
 
-                aJson = sbjson.ToString();
-
+                json = sbjson.ToString();
             }
-            return aJson;
-        }
 
-       
+            return json;
+
+
+        }
+        #endregion
     }
-    #endregion
 }

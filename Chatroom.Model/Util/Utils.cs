@@ -53,7 +53,8 @@ namespace Chatroom.Model.Util
         /// <summary>
         /// Represent the Stock URL
         /// </summary>
-        public static string StockUrl { get; set; } = "https://stooq.com/q/l/?s=";
+        public static string StockUrlBase { get; set; } = "https://stooq.com/q/l/?s=";
+        public static string StockUrlEnd { get; set; } = "&f=sd2t2ohlcv&h&e=csv";
         /// <summary>
         /// Represent As the default virtual host is called "/", this will need to be encoded as "%2F".
         /// </summary>
