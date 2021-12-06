@@ -1,13 +1,16 @@
-﻿<Properties StartupConfiguration="{38BA6281-438E-43B0-AFAC-21B549FFEFDA}|Chatroom">
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties StartupConfiguration="{68EEE0B5-51AB-4869-95BA-59F35DFD7518}|Unit Tests">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs">
     <Files>
-      <File FileName="Chatroom/Controllers/ChatRoom/ChatRoomController.cs" Line="31" Column="1" />
-      <File FileName="Chatroom.Service/ChatRoom/ChatRoomServices.cs" Line="101" Column="51" />
-      <File FileName="Chatroom.Service/ChatRoom/IChatRoomServices.cs" />
-      <File FileName="Chatroom.Web/Views/ChatRoom/ChatRoom.cshtml" />
-      <File FileName="Chatroom.Model/Util/Utils.cs" />
-      <File FileName="Chatroom.Web/Program.cs" Line="12" Column="25" />
-      <File FileName="Chatroom.Web/Startup.cs" />
+      <File FileName="Chatroom.Test/Service/ChatRoom/ChatRoomServicesTest.cs" Line="14" Column="1" />
+      <File FileName="Chatroom.Test/Controller/WeatherForecast/WeatherForecastControllerTest.cs" Line="36" Column="52" />
+      <File FileName="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerFactory.cs" Line="28" Column="1" />
+      <File FileName="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" Line="32" Column="25" />
+      <File FileName="Chatroom.Service/ChatRoom/IChatRoomServices.cs" Line="19" Column="38" />
+      <File FileName="Chatroom.Model/Util/Utils.cs" Line="21" Column="30" />
+      <File FileName="Chatroom/Controllers/ChatRoom/ChatRoomController.cs" Line="44" Column="1" />
+      <File FileName="Chatroom.Service/ChatRoom/ChatRoomServices.cs" Line="47" Column="1" />
+      <File FileName="Chatroom.Test/Service/ChatRoom/ChatRoomServicesFactory.cs" Line="7" Column="43" />
+      <File FileName="Chatroom/Controllers/WeatherForecast/WeatherForecastController.cs" Line="25" Column="45" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,6 +19,7 @@
             <Node name="Chatroom.API" expanded="True">
               <Node name="Controllers" expanded="True">
                 <Node name="ChatRoom" expanded="True" />
+                <Node name="WeatherForecast" expanded="True" />
               </Node>
               <Node name="Installers" expanded="True" />
             </Node>
@@ -23,15 +27,26 @@
               <Node name="Util" expanded="True" />
             </Node>
             <Node name="Chatroom.Service" expanded="True">
-              <Node name="ChatRoom" expanded="True">
-                <Node name="ChatRoomServices.cs" selected="True" />
-              </Node>
+              <Node name="ChatRoom" expanded="True" />
               <Node name="Helpers" expanded="True">
                 <Node name="MessageConsumer" expanded="True" />
               </Node>
+              <Node name="WeatherForecast" expanded="True" />
             </Node>
-            <Node name="Chatroom.Web" expanded="True" />
+            <Node name="Chatroom.Test" expanded="True">
+              <Node name="Controller" expanded="True">
+                <Node name="ChatRoom" expanded="True" />
+              </Node>
+              <Node name="Service" expanded="True">
+                <Node name="WeatherForecast" selected="True" />
+              </Node>
+            </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Chatroom" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
@@ -43,13 +58,11 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="89" column="9" />
-      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="127" column="1" />
-      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom/Controllers/ChatRoom/ChatRoomController.cs" relfile="Chatroom/Controllers/ChatRoom/ChatRoomController.cs" line="30" column="1" />
-      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="162" column="1" />
       <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom/Controllers/ChatRoom/ChatRoomController.cs" relfile="Chatroom/Controllers/ChatRoom/ChatRoomController.cs" line="31" column="1" />
-      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="152" column="1" />
-      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="201" column="1" />
+      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="20" column="1" />
+      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="46" column="1" />
+      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" relfile="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" line="26" column="1" />
+      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" relfile="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" line="35" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations>

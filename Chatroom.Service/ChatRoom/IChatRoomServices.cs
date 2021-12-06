@@ -17,7 +17,6 @@ namespace Chatroom.Service.ChatRoom
         /// </summary>
         /// <returns></returns>
         Task<List<RabbitMQApiResponse>> GetAllMessage();
-     
         /// <summary>
         ///  Get the Bot Message
         /// </summary>

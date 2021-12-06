@@ -42,53 +42,5 @@ namespace Chatroom.API.Controllers.ChatRoom
 
             return Ok(aResult);
         }
-
-        
-
-
-        private string Received ()
-        {
-           
-            var connectionFactory = new ConnectionFactory
-            {
-
-                Uri = new Uri("amqp://guest:guest@localhost:5672")
-            };
-            try
-            {
-                var connection = connectionFactory.CreateConnection();
-                var channel = connection.CreateModel();
-                var queueDeclareResponse = channel.QueueDeclare("first-queue", true, false, false, null);
-                channel.BasicQos(0, 1, false);
-                MessageReceiver messageReceiver = new MessageReceiver(channel);
-                var theReceivedMessage = channel.BasicConsume("first-queue", false, messageReceiver);
-
-                var consumer = new AsyncEventingBasicConsumer(channel);
-                consumer.Received += async (ch, ea) =>
-                {
-                    var body = ea.Body.ToArray();
-
-                    var message = JsonConvert.DeserializeObject(Encoding.UTF8.GetString(body));
-                    channel.BasicAck(ea.DeliveryTag, false);
-                    await Task.Yield();
-
-                    };
-
-                for (int i = 0; i < queueDeclareResponse.MessageCount; i++)
-                {
-                     
-
-                }
-
-
-
-                }
-            catch (Exception ex)
-            {
-
-            }
-            return "";
-        }
-
     }
 }

@@ -19,4 +19,12 @@
     <ProjectReference Include="..\Chatroom\Chatroom.API.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Controller\ChatRoom\" />
+    <None Remove="Service\ChatRoom\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\ChatRoom\" />
+    <Folder Include="Service\ChatRoom\" />
+  </ItemGroup>
 </Project>
