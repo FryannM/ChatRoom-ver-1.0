@@ -84,7 +84,7 @@ namespace Chatroom.Service.ChatRoom
         ///  return the price per share of the stock 
         /// </summary>
         /// <param name="theStockCode"> the code of the stock</param>
-        /// <returns>aStockResponse  a list of the StockResponse </returns>
+        /// <returns> </returns>
         public async Task<string> GetStockResponse(string theStockCode)
         {
 
@@ -93,11 +93,12 @@ namespace Chatroom.Service.ChatRoom
             {
                 try
                 {
-                    var aUrl = new Uri($"{Util.StockUrl}");
+                    
+                    var aUrl =  new Uri($"{Util.StockUrl}{theStockCode}");
                     aHttpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue(Util.Applicationjson));
-                    var aResponse = await aHttpClient.GetAsync(aUrl);
-                    var aStringContent = await aResponse.Content.ReadAsStringAsync();
-                    var aJson = CsvToJsonConverter(aStringContent);
+                    HttpResponseMessage aResponse = await aHttpClient.GetAsync(aUrl);
+                    string aStringContent = await aResponse.Content.ReadAsStringAsync();
+                    string aJson = CsvToJsonConverter(aStringContent);
                     aResponseList = JsonConvert.DeserializeObject<List<object>>(aJson);
                 }
                 catch (Exception eError)
@@ -105,7 +106,6 @@ namespace Chatroom.Service.ChatRoom
                     throw eError;
                 }
             }
-
 
             string aCombindedString = string.Join("-", aResponseList);
             StockResponseApi aStockResponse = JsonConvert.DeserializeObject<StockResponseApi>(aCombindedString);
@@ -116,46 +116,40 @@ namespace Chatroom.Service.ChatRoom
         }
 
         /// <summary>
-        /// validate if the Bot need to response the message
+        /// Get the Bot Response and delivere the message
         /// </summary>
         /// <param name="theMeesage"></param>
         /// <returns></returns>
 
         public async Task<string> GetBotResponse(MessageDto theMessage)
         {
-            string aStockResponse = string.Empty;
-            //  validate message
-            // theMessage.Message
 
             
-            Char value = 'E';
+            string aStockResponse = string.Empty;
+            
             StringComparison comp = StringComparison.OrdinalIgnoreCase;
-            Boolean result = theMessage.Message.Contains(value, comp);
+            theMessage.Message.Contains(Util.AppleIncCommand, comp);
 
+            string[] separatingStrings = { "stock_code = ", "..." };
+            string[] aStockCodes = theMessage.Message.Split(separatingStrings, System.StringSplitOptions.RemoveEmptyEntries);
+            
+            foreach (var aStockCode in aStockCodes)
+            {
+                aStockResponse = aStockCode;
+            }
 
-            var code = "appl.us";
-                 aStockResponse = await GetStockResponse(code);
-                var aBotMessage = new MessageDto()
-                {
+            await GetStockResponse(aStockResponse);
+
+            var aBotMessage = new MessageDto()  {
                     User = Util.BotName,
                     Message = aStockResponse,
-                    TimeStamp = DateTime.Now
-                };
+                    TimeStamp = DateTime.Now };
+
                  SendMessage(aBotMessage);
             
-                // this code need to dynamic plzzzz
-             
                 return aStockResponse;
           
         }
-
-
-
-        
-
-
-
-
 
         /// <summary>
         /// Helper to convert the Cvs file that comes from the Api call as response to a Json

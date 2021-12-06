@@ -19,7 +19,7 @@ namespace Chatroom.Service.ChatRoom
         Task<List<RabbitMQApiResponse>> GetAllMessage();
      
         /// <summary>
-        ///  Get the Bot Response
+        ///  Get the Bot Message
         /// </summary>
         /// <param name="theMessage">Represent the Message that we are going to Log into RabbitMQ</param>
         /// <returns></returns>

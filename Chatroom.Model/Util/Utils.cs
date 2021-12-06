@@ -1,12 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Chatroom.Model.Util
 {
     public class MessageDto
     {
+        /// <summary>
+        /// Represent the User Name
+        /// </summary>
         public string User { get; set; }
+        /// <summary>
+        /// Represent the Message
+        /// </summary>
         public string Message { get; set; }
+        /// <summary>
+        /// Represent the Timestamp of the Message
+        /// </summary>
         public DateTime TimeStamp { get; set; }
     }
 
@@ -45,7 +53,7 @@ namespace Chatroom.Model.Util
         /// <summary>
         /// Represent the Stock URL
         /// </summary>
-        public static string StockUrl { get; set; } = "https://stooq.com/q/l/?s=aapl.us&f=sd2t2ohlcv&h&e=csv";
+        public static string StockUrl { get; set; } = "https://stooq.com/q/l/?s=";
         /// <summary>
         /// Represent As the default virtual host is called "/", this will need to be encoded as "%2F".
         /// </summary>
@@ -78,14 +86,20 @@ namespace Chatroom.Model.Util
         /// </summary>
         public static string BotResponse { get; set; } = " per share ";
 
-
+        /// <summary>
+        /// Represent the BotName
+        /// </summary>
         public static string BotName { get; set; } = "Bot";
+
+
+        public readonly static string AppleIncCommand  = "stock_code = aapl.us";
+
+        public static  string EuroCommand = "stock_code";
 
     }
 
     public class StockResponseApi
     {
-        
         public string Symbol { get; set; }
         public DateTime Date { get; set; }
         public string Time { get; set; }
