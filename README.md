@@ -31,7 +31,7 @@ Git
 
 * .NET CLI → dotnet-ef migrations add Initial
 *  NuGet Package Manager Console → Add-Migration Initial
-* Create and update the Database:
+*  Create and update the Database:
 * .NET CLI → dotnet-ef database update
 *  NuGet Package Manager Console → Update-Database
 *  
@@ -40,8 +40,10 @@ Git
 
 *  Setting up RabbitMQ on Docker 
 ## RUN 
+ commands to install  rabbitMQ:
 * docker pull rabbitmq:3-management
 * docker run -d --hostname  my-rabbit --name fryann-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management 
+commands to install SqlServer:
 
 
 

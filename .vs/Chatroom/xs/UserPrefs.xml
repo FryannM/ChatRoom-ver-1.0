@@ -1,16 +1,11 @@
-﻿<Properties StartupConfiguration="{68EEE0B5-51AB-4869-95BA-59F35DFD7518}|Unit Tests">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs">
+﻿<Properties StartupConfiguration="Multiple Projects">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Chatroom/Controllers/ChatRoom/ChatRoomController.cs">
     <Files>
-      <File FileName="Chatroom.Test/Service/ChatRoom/ChatRoomServicesTest.cs" Line="14" Column="1" />
-      <File FileName="Chatroom.Test/Controller/WeatherForecast/WeatherForecastControllerTest.cs" Line="36" Column="52" />
-      <File FileName="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerFactory.cs" Line="28" Column="1" />
-      <File FileName="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" Line="32" Column="25" />
-      <File FileName="Chatroom.Service/ChatRoom/IChatRoomServices.cs" Line="19" Column="38" />
-      <File FileName="Chatroom.Model/Util/Utils.cs" Line="21" Column="30" />
-      <File FileName="Chatroom/Controllers/ChatRoom/ChatRoomController.cs" Line="44" Column="1" />
-      <File FileName="Chatroom.Service/ChatRoom/ChatRoomServices.cs" Line="47" Column="1" />
-      <File FileName="Chatroom.Test/Service/ChatRoom/ChatRoomServicesFactory.cs" Line="7" Column="43" />
-      <File FileName="Chatroom/Controllers/WeatherForecast/WeatherForecastController.cs" Line="25" Column="45" />
+      <File FileName="Chatroom/Controllers/ChatRoom/ChatRoomController.cs" Line="32" Column="47" />
+      <File FileName="Chatroom.Service/ChatRoom/ChatRoomServices.cs" Line="132" Column="59" />
+      <File FileName="Chatroom.Web/Views/ChatRoom/ChatRoom.cshtml" Line="55" Column="68" />
+      <File FileName="Chatroom.Model/Util/Utils.cs" Line="96" Column="72" />
+      <File FileName="Chatroom.Service/ChatRoom/IChatRoomServices.cs" Line="14" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,51 +13,40 @@
           <Node name="Chatroom" expanded="True">
             <Node name="Chatroom.API" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="ChatRoom" expanded="True" />
-                <Node name="WeatherForecast" expanded="True" />
+                <Node name="ChatRoom" expanded="True">
+                  <Node name="ChatRoomController.cs" selected="True" />
+                </Node>
               </Node>
-              <Node name="Installers" expanded="True" />
+              <Node name="Properties" expanded="True" />
             </Node>
             <Node name="Chatroom.Model" expanded="True">
               <Node name="Util" expanded="True" />
             </Node>
             <Node name="Chatroom.Service" expanded="True">
               <Node name="ChatRoom" expanded="True" />
-              <Node name="Helpers" expanded="True">
-                <Node name="MessageConsumer" expanded="True" />
-              </Node>
-              <Node name="WeatherForecast" expanded="True" />
             </Node>
-            <Node name="Chatroom.Test" expanded="True">
-              <Node name="Controller" expanded="True">
+            <Node name="Chatroom.Web" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
                 <Node name="ChatRoom" expanded="True" />
-              </Node>
-              <Node name="Service" expanded="True">
-                <Node name="WeatherForecast" selected="True" />
               </Node>
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="Chatroom" expanded="True" selected="True" />
-        </State>
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Chatroom.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.ItemProperties.Chatroom.Web PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.Chatroom.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.ItemProperties.Chatroom.Test PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Debugger.DebugSourceFolders />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom/Controllers/ChatRoom/ChatRoomController.cs" relfile="Chatroom/Controllers/ChatRoom/ChatRoomController.cs" line="31" column="1" />
       <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="20" column="1" />
       <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="46" column="1" />
-      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" relfile="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" line="26" column="1" />
-      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" relfile="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" line="35" column="1" />
+      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="113" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations>

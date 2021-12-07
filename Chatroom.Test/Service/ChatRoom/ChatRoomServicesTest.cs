@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Chatroom.Model.Util;
 using Xunit;
 namespace Chatroom.Test.Service.ChatRoom
 {

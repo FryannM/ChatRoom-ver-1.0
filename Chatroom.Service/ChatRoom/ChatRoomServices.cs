@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace Chatroom.Service.ChatRoom
         /// <returns></returns>
         public async Task<List<RabbitMQApiResponse>> GetAllMessage()
         {
-            List<RabbitMQApiResponse> AResult = new List<RabbitMQApiResponse>();
+            List<RabbitMQApiResponse> aMessages = new List<RabbitMQApiResponse>();
 
             using (var aHttpClient = new HttpClient())
             {
@@ -35,7 +36,7 @@ namespace Chatroom.Service.ChatRoom
                     var aResponse = await aHttpClient.PostAsync(Util.RabbitMqURl, aData);
 
                     string aStringContent = await aResponse.Content.ReadAsStringAsync();
-                    AResult = JsonConvert.DeserializeObject<List<RabbitMQApiResponse>>(aStringContent);
+                    aMessages = JsonConvert.DeserializeObject<List<RabbitMQApiResponse>>(aStringContent);
 
                 }
                 catch (Exception eError)
@@ -43,7 +44,7 @@ namespace Chatroom.Service.ChatRoom
                     throw eError;
                 }
             }
-            return AResult;
+            return aMessages;
         }
 
         public bool SendMessage(MessageDto theMessage)
@@ -110,6 +111,8 @@ namespace Chatroom.Service.ChatRoom
             StockResponseApi aStockResponse = JsonConvert.DeserializeObject<StockResponseApi>(aCombindedString);
             if (aStockResponse.Date == null) { return string.Empty; }
 
+            if (aStockResponse == null) return String.Empty;
+
             var aResponseMessage = $"{theStockCode} quote is ,{aStockResponse.High}{Util.BotResponse}";
 
 
@@ -126,10 +129,7 @@ namespace Chatroom.Service.ChatRoom
         {
             string aStockCodeResponse = string.Empty;
 
-            StringComparison comp = StringComparison.OrdinalIgnoreCase;
-            theMessage.Message.Contains(Util.AppleIncCommand, comp);
-
-            string[] separatingStrings = { "stock_code = ", "..." };
+            string[] separatingStrings = { "/stock_code = ", "..." };
             string[] aStockCodes = theMessage.Message.Split(separatingStrings, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (var aStockCode in aStockCodes)

@@ -16,7 +16,7 @@
         <div class="shadow p-4 mb-4 bg-white">
             <a class="btn btn-outline-secondary btn-sm">User: FryannM</a>
             <div class="mt-3">
-                <div class="alert alert-success alert-dismissible text-center mt-3">
+                <div class="alert alert-info alert-dismissible text-center mt-3">
                     Chat Room: <b>the Main ChatRoom</b>
                 </div>
             </div>
@@ -45,27 +45,49 @@
                 indexed_array[n['name']] = n['value'];
             });
             return indexed_array;
-            console.log(JSON.stringify(indexed_array));
+            
+        }
+
+
+        function getAllMessage() {
+            let AllMessageUrl = `https://localhost:63527/api/ChatRoom/getMessage`;
+            $.ajax({
+                type: "GET",
+                url: AllMessageUrl,
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                         document.querySelector('#messages').innerHTML += (
+                             ` <br> <b><small> ${result}</small></b>
+                        </div`);
+                }
+            });
+
         }
         $('#submit-form').click(function (e) {
+
+            $('#messages').text("FryannM Says : " + $('#message').val()) + '\n';
+            $('#messaged').text('\n');
+            
             e.preventDefault();
-            debugger;
             var $form = $('form');
             var model = getFormData($form);
-            var url     = `https://localhost:35568/api/ChatRoom/message`;
+
+            var url = `https://localhost:63527/api/ChatRoom/message`;
             $.ajax({
                 type: "POST",
                 url: url,
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(model),
                 success: function (result) {
-                    debugger;
-                    if (result.success) {
-                        console.log('Urrah')
+                    $('#message').val('');
+                    if (result) {
+                        getAllMessage();
                     }
                 }
             });
-        });</script>
+        });
+
+    </script>
 
 }
 

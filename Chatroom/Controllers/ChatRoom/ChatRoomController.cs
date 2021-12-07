@@ -24,23 +24,24 @@ namespace Chatroom.API.Controllers.ChatRoom
         {
             _chatRoomService = chatRoomServices;
         }
-       
-        
+
+
         [HttpPost("message")]
         public async Task<IActionResult> SendMessage([FromBody] MessageDto theMessage)
         {
-            
+            theMessage.User = "Fryann Martínez";
             var aResult = _chatRoomService.SendMessage(theMessage);
             await _chatRoomService.GetBotResponse(theMessage);
-            return Ok();
+            return Ok(aResult);
         }
 
-        [HttpPost("getMessage")]
+        [HttpGet("getMessage")]
         public async  Task<IActionResult>  GetAllMessage()
         {
            var aResult = await _chatRoomService.GetAllMessage();
 
-            return Ok(aResult);
+            var Json = JsonConvert.SerializeObject(aResult);
+            return Ok(Json);
         }
     }
 }

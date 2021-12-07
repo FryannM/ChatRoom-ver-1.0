@@ -16,16 +16,5 @@ namespace Chatroom.Web.Controllers
         {
             return View();
         }
-
-
-        public JsonResult SendMessage(string message, string friend)
-        {
-            //RabbitMQBll obj = new RabbitMQBll();
-            //IConnection con = obj.GetConnection();
-            //bool flag = obj.send(con, message, friend);
-            //return Json(null);
-            return null;
-        }
-
     }
 }
