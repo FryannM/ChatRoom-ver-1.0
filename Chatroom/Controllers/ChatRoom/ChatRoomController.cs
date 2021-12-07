@@ -28,7 +28,7 @@ namespace Chatroom.API.Controllers.ChatRoom
         }
 
         [HttpGet("getMessage")]
-        public async  Task<IActionResult>  GetAllMessage()
+        public async Task<IActionResult>  GetAllMessage()
         {
            var aResult = await _chatRoomService.GetAllMessage();
 

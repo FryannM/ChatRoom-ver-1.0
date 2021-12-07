@@ -93,11 +93,6 @@ namespace Chatroom.Model.Util
         public static string BotName { get; set; } = "Bot";
 
 
-        public readonly static string AppleIncCommand  = "/stock_code =";
-
-        public static  string EuroCommand = "stock_code";
-        
-
     }
 
     public class StockResponseApi
