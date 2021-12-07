@@ -17,7 +17,7 @@ namespace Chatroom.Test.Controller.ChatRoom
             var result = await controller.GetAllMessage();
 
             var okResult = Assert.IsType<OkObjectResult>(result);
-            var returnValue = Assert.IsType<List<RabbitMQApiResponse>>(okResult.Value);
+            var returnValue = Assert.IsType<List<string>>(okResult.Value);
             Assert.Equal(expectedValue, returnValue.Count);
         }
 

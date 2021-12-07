@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Chatroom.Model.Util;
 using Chatroom.Service.ChatRoom;
-using Chatroom.Service.Helpers.MessageConsumer;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,7 +17,6 @@ namespace Chatroom.API.Controllers.ChatRoom
         {
             _chatRoomService = chatRoomServices;
         }
-
 
         [HttpPost("message")]
         public async Task<IActionResult> SendMessage([FromBody] MessageDto theMessage)

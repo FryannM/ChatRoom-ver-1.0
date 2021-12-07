@@ -1,11 +1,7 @@
 ﻿<Properties StartupConfiguration="Multiple Projects">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Chatroom/Controllers/ChatRoom/ChatRoomController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs">
     <Files>
-      <File FileName="Chatroom/Controllers/ChatRoom/ChatRoomController.cs" Line="32" Column="47" />
-      <File FileName="Chatroom.Service/ChatRoom/ChatRoomServices.cs" Line="132" Column="59" />
-      <File FileName="Chatroom.Web/Views/ChatRoom/ChatRoom.cshtml" Line="55" Column="68" />
-      <File FileName="Chatroom.Model/Util/Utils.cs" Line="96" Column="72" />
-      <File FileName="Chatroom.Service/ChatRoom/IChatRoomServices.cs" Line="14" Column="14" />
+      <File FileName="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" Line="12" Column="21" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,25 +9,30 @@
           <Node name="Chatroom" expanded="True">
             <Node name="Chatroom.API" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="ChatRoom" expanded="True">
-                  <Node name="ChatRoomController.cs" selected="True" />
-                </Node>
-              </Node>
-              <Node name="Properties" expanded="True" />
-            </Node>
-            <Node name="Chatroom.Model" expanded="True">
-              <Node name="Util" expanded="True" />
-            </Node>
-            <Node name="Chatroom.Service" expanded="True">
-              <Node name="ChatRoom" expanded="True" />
-            </Node>
-            <Node name="Chatroom.Web" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Views" expanded="True">
                 <Node name="ChatRoom" expanded="True" />
               </Node>
             </Node>
+            <Node name="Chatroom.Model" expanded="True" />
+            <Node name="Chatroom.Test" expanded="True">
+              <Node name="Controller" expanded="True">
+                <Node name="ChatRoom" expanded="True">
+                  <Node name="ChatRoomControllerTest.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="Chatroom.Web" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="ChatRoom" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Chatroom" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
@@ -44,9 +45,9 @@
   <Debugger.DebugSourceFolders />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="20" column="1" />
-      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="46" column="1" />
-      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Service/ChatRoom/ChatRoomServices.cs" relfile="Chatroom.Service/ChatRoom/ChatRoomServices.cs" line="113" column="1" />
+      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" relfile="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" line="13" column="1" />
+      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" relfile="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" line="26" column="1" />
+      <Breakpoint file="/Users/macboockpro/Desktop/ChatRoom/Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" relfile="Chatroom.Test/Controller/ChatRoom/ChatRoomControllerTest.cs" line="21" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations>
